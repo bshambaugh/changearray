@@ -1,0 +1,1 @@
+# This is a bunch of stuff to convert floating point nunber from BH1750 sensor to uint8_t 32 byte array like in [url]https://learn.sparkfun.com/tutorials/cryptographic-co-processor-atecc508a-qwiic-hookup-guide/example-2-sign[/url]
