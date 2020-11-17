@@ -1,0 +1,7 @@
+A is currently: b
+B is currently: a
+before the memory is freed: 
+
+here is the words[0] b
+here is the words[1] a
+Here is something with A 98
