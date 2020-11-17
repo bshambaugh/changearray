@@ -10,3 +10,10 @@ returnArraysFromFunc6_8shortI_scratch3_5.c (float to IEEE754 binary) , /changear
 
 /scratchwork/returnArraysFromFunc6_8shortI_scratch3_5.c --->  floatToIEEE754Binary.c
 ### compile: gcc -g floatToIEEE754Binary -o floatToIEEE754Binary -lm
+However, this program has some roundoff error(?), so try: https://www.geeksforgeeks.org/program-for-conversion-of-32-bits-single-precision-ieee-754-floating-point-representation/ .
+
+## managing the memory::
+https://valgrind.org/docs/manual/quick-start.html
+
+## running tests:
+http://www.throwtheswitch.org/unity/
