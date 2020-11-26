@@ -5,6 +5,7 @@ There is a lot of cruff built up here from repeated experiments, but See: [
 returnArraysFromFunc6_8shortI_scratch3_5.c (float to IEEE754 binary) , /changearray/ifstructures/loopbyFour/example1_2_9f.c (binary to hex array if the mergeChars function can be fixed. (Use gdb and valgrind)) now the modified version is in /ifstructures/loopbyFour/FourBitToHex.c
 
 ## File update:
+## these the files will need to be chained together
 /scratchwork/ifstructures/loopbyFour/FourBitToHex_short.c ---> binaryToHexArray.c
 ### compile: gcc -g binaryToHexArray.c -o binaryToHexArray
 
