@@ -1,7 +1,7 @@
 ### This is a bunch of stuff to convert floating point nunber from BH1750 sensor to uint8_t 32 byte array like in https://learn.sparkfun.com/tutorials/cryptographic-co-processor-atecc508a-qwiic-hookup-guide/example-2-sign
 
 ## Legacy
-There is a lot of cruff built up here from repeated experiments, but See: [
+There is a lot of cruff built up here from repeated experiments, moved to scratchwork but See: [
 returnArraysFromFunc6_8shortI_scratch3_5.c (float to IEEE754 binary) , /changearray/ifstructures/loopbyFour/example1_2_9f.c (binary to hex array if the mergeChars function can be fixed. (Use gdb and valgrind)) now the modified version is in /ifstructures/loopbyFour/FourBitToHex.c
 
 ## File update:
@@ -18,3 +18,7 @@ https://valgrind.org/docs/manual/quick-start.html
 
 ## running tests:
 http://www.throwtheswitch.org/unity/
+
+##temporary
+
+Temporarily I moved the source code for binaryToHexArray.c and floatToIEEE754Binary.c to src_backup and I created a simple folder for example1 tests from the unity project (https://github.com/ThrowTheSwitch/Unity) in src and test. the makefile runs example1 
