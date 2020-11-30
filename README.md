@@ -16,9 +16,14 @@ However, this program has some roundoff error(?), so try: https://www.geeksforge
 ## managing the memory::
 https://valgrind.org/docs/manual/quick-start.html
 
+valgrind floatToIEEE754Binary
+
 ## running tests:
 http://www.throwtheswitch.org/unity/
 
 ##temporary
 
 Temporarily I moved the source code for binaryToHexArray.c and floatToIEEE754Binary.c to src_backup and I created a simple folder for example1 tests from the unity project (https://github.com/ThrowTheSwitch/Unity) in src and test. the makefile runs example1 
+
+## questions??
+can I move my entire workflow into make??
