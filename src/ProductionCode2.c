@@ -1,7 +1,20 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
-#include "binaryToHexArray.h"
+
+/*
+struct structArray  {
+   char hexArray[4][3];
+};
+*/
+
+struct concatenatedString {
+   char example[2];
+};
+
+typedef struct concatenatedString Struct;
+/*
+typedef struct structArray Hexarray;
 
 Hexarray BinToHexArray(int array[],int length) {
    char *p, *g;
@@ -30,6 +43,7 @@ Hexarray BinToHexArray(int array[],int length) {
 
     return HexArray;
 }
+*/
 
 Struct merge_Chars(char A, char B) {
    Struct s;
@@ -57,6 +71,34 @@ Struct merge_Chars(char A, char B) {
     free(bb);
 
     return s;
+}
+
+char* IntToString(int a) {
+  char  *p = malloc(sizeof *p);
+
+  if (a == 0)  {
+      *p = 48;
+  } else if (a == 1) {
+      *p = 49;
+  } else if (a == 2) {
+      *p = 50;
+  } else if (a == 3) {
+     *p = 51;
+  } else if (a == 4)  {
+     *p = 52;
+  } else if (a == 5) {
+     *p = 53;
+  } else if (a == 6) {
+     *p = 54;
+  }  else if (a == 7) {
+     *p = 55;
+  } else if (a == 8) {
+     *p = 56;
+  } else if (a == 9) {
+     *p = 57;
+  } else
+     *p = 48;
+  return p;
 }
 
 char* IntToChar(char str1[]) {
@@ -99,34 +141,6 @@ char* IntToChar(char str1[]) {
   return p;
 }
 
-char* IntToString(int a) {
-  char  *p = malloc(sizeof *p);
-
-  if (a == 0)  {
-      *p = 48;
-  } else if (a == 1) {
-      *p = 49;
-  } else if (a == 2) {
-      *p = 50;
-  } else if (a == 3) {
-     *p = 51;
-  } else if (a == 4)  {
-     *p = 52;
-  } else if (a == 5) {
-     *p = 53;
-  } else if (a == 6) {
-     *p = 54;
-  }  else if (a == 7) {
-     *p = 55;
-  } else if (a == 8) {
-     *p = 56;
-  } else if (a == 9) {
-     *p = 57;
-  } else
-     *p = 48;
-  return p;
-}
-
 char* fourBitToHex(int array[], int count) {
    // grab 4 bits:
    int i,j;
@@ -161,7 +175,41 @@ char* fourBitToHex(int array[], int count) {
       }
 
       r = IntToChar(second);
- 
+
       return r;
 }
 
+int main() {
+   // Test for IntToString
+   char *k;
+   k = IntToString(5);
+   printf("5 converd to The string is: %c\n",*k);
+   free(k);
+  
+   // Test for IntToChar
+   char *r;
+   r = IntToChar("1011");
+   printf("1011 converted The hex string is: %c\n",*r);
+   free(r);
+
+   // grab the first 4 bits of an array
+   int array[32] = {0,1,0,0,0,0,1,1,1,0,0,0,0,0,1,1,1,0,1,0,0,1,1,0,0,1,1,0,0,1,0,1};
+   int i = 4;
+   char *p;
+   p = fourBitToHex(array,i);
+   printf("The 1st 4 bits from the array in hex are: %c\n",*p);
+   free(p);
+  
+   // merge Two Characters into a Struct 
+   Struct result;
+   char *j, *m;
+   j = "A";
+   m = "B";
+   result = merge_Chars(*j,*m);
+   // printf("Print the characters; { %c , %c }\n",result.example[0],result.example[1]);
+   printf("%c and %c merged are: %s\n",*j,*m,result.example);
+
+   // BinToHexArray
+
+   return 0;
+}

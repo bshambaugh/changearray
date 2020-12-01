@@ -45,8 +45,8 @@ CFLAGS += -Wold-style-definition
 
 TARGET_BASE1=test1
 TARGET1 = $(TARGET_BASE1)$(TARGET_EXTENSION)
-SRC_FILES1=$(UNITY_ROOT)/src/unity/src/unity.c src/ProductionCode.c  test/TestProductionCode.c  test/test_runners/TestProductionCode_Runner.c
-INC_DIRS=-Isrc -I$(UNITY_ROOT)/src/unity/src
+SRC_FILES1=$(UNITY_ROOT)/test/unity/src/unity.c src/ProductionCode.c  test/TestProductionCode.c  test/test_runners/TestProductionCode_Runner.c
+INC_DIRS=-Isrc -I$(UNITY_ROOT)/test/unity/src
 SYMBOLS=
 
 all: clean default
