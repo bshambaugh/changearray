@@ -13,13 +13,24 @@ returnArraysFromFunc6_8shortI_scratch3_5.c (float to IEEE754 binary) , /changear
 ### compile: gcc -g floatToIEEE754Binary -o floatToIEEE754Binary -lm
 However, this program has some roundoff error(?), so try: https://www.geeksforgeeks.org/program-for-conversion-of-32-bits-single-precision-ieee-754-floating-point-representation/ .
 
+## now I am doing something like:
+gcc -g main.c binToHexArray.c -o main
+
+and hopefully: gcc -g main.c binToHexArray.c floatToIEEE754Binary.c -o main
+
 ## managing the memory::
 https://valgrind.org/docs/manual/quick-start.html
 
 valgrind floatToIEEE754Binary
 
+valgrind binaryToHexArray
+
+or maybe just main
+
 ## running tests:
 http://www.throwtheswitch.org/unity/
+
+have something like /test/binToHexArrayTest.c and /test/floatToIEEE754BinaryTest.c that pull in functions from /src/binToHexArray.c and /src/floatToIEEE754Binary.c, respectively.
 
 ##temporary
 
