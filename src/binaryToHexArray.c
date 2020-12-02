@@ -5,7 +5,7 @@
 
 Hexarray BinToHexArray(int array[],int length) {
    char *p, *g;
-   Hexarray HexArray = { '\0', '\0' };
+   Hexarray HexArray = {{{'\0','\0'}}};
    Struct result;
 
     int divisor = 8;
@@ -95,7 +95,7 @@ char* IntToChar(char str1[]) {
   } else if (strcmp(str1,"1111") == 0) {
      *p = 70;
   } else
-     *p = 48; // return 0 if incorrect input
+     *p = 48; /* return 0 if incorrect input */
   return p;
 }
 
@@ -128,15 +128,14 @@ char* IntToString(int a) {
 }
 
 char* fourBitToHex(int array[], int count) {
-   // grab 4 bits:
+   /* grab 4 bits: */
    int i,j;
    int windowSize = 4;
-   int arrayInt[4];
    char arrayString[4];
    char *k;
    char *r;
 
-   // convert the array to a string
+   /* convert the array to a string */
    char arraythree[4][4];
    char second [10] = "\0";
 
