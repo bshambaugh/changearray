@@ -1,0 +1,68 @@
+/*
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+*/
+#include <stdlib.h>
+#include "binaryToHexArray.h"
+#include <unity.h>
+
+/* sometimes you may want to get at local data in a module.
+ * for example: If you plan to pass by reference, this could be useful
+ * however, it should often be avoided */
+int a = 5;
+char b[] = "1011";
+/* Struct result; */
+
+void setUp(void)
+{
+ /*
+   extern const char *j;
+   extern const char *m;
+   j = "A";
+   m = "B";
+ */
+}
+
+void tearDown(void)
+{
+}
+
+void test_IntToString(void)
+{
+  /* All of these should pass */
+  TEST_ASSERT_EQUAL_STRING("5", IntToString(a));
+}
+
+void test_IntToChar(void)
+{
+   TEST_ASSERT_EQUAL_STRING("B", IntToChar(b));
+}
+
+void test_merge_Chars(void)
+{
+   const char j = '1';
+   const char m = 'F';  
+
+   Struct result = merge_Chars(j,m);
+
+   const char hexStringOut[3] = {'1','F','\0'};
+   
+   TEST_ASSERT_EQUAL_STRING(hexStringOut,result.example);
+}
+
+void test_fourBitToHex(void)
+{
+    const char g = '3';
+    int array[32] = {0,1,0,0,0,0,1,1,1,0,0,0,0,0,1,1,1,0,1,0,0,1,1,0,0,1,1,0,0,1,0,1};
+    int i = 8;
+    char *p;
+    p = fourBitToHex(array,i);
+
+    printf("The 2nd 4 bits from the array in hex are: %c\n",*p);
+    printf("The c is: %c\n",g);
+
+    TEST_ASSERT_EQUAL(g,*p);
+    free(p);
+}
+

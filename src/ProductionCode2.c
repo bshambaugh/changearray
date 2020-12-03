@@ -194,10 +194,10 @@ int main() {
 
    // grab the first 4 bits of an array
    int array[32] = {0,1,0,0,0,0,1,1,1,0,0,0,0,0,1,1,1,0,1,0,0,1,1,0,0,1,1,0,0,1,0,1};
-   int i = 4;
+   int i = 8;
    char *p;
    p = fourBitToHex(array,i);
-   printf("The 1st 4 bits from the array in hex are: %c\n",*p);
+   printf("The 2nd 4 bits from the array in hex are: %c\n",*p);
    free(p);
   
    // merge Two Characters into a Struct 

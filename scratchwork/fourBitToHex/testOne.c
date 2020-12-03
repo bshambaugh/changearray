@@ -1,43 +1,5 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "binaryToHexArray.h"
-
-Hexarray BinToHexArray(int array[],int length) {
-   char *p, *g;
-   Hexarray HexArray = {{{'\0','\0'}}};
-   Struct result;
-
-    int divisor = 8;
-    int divisorTwo = 4;
-    int i;
-
-
-    for (i=divisorTwo; i <= length; i = i + divisor) {
-         if(i+divisor/2 <= length) {
-          p = fourBitToHex(array,i);
-          g = fourBitToHex(array,i+divisor/2);
-          result = merge_Chars(*p,*g);
-          HexArray.hexArray[(i+divisor/2)/divisor-1][0] = result.example[0];
-          HexArray.hexArray[(i+divisor/2)/divisor-1][1] = result.example[1];
-          HexArray.hexArray[(i+divisor/2)/divisor-1][3] = '\0';
-          free(p);
-          free(g);
-        }
-
-    }
-
-
-    return HexArray;
-}
-
-Struct merge_Chars(char A, char B) {
-   Struct s;
-   s.example[0] = A;
-   s.example[1] = B;
-   s.example[2] = '\0';
-   return s;
-}
 
 char* IntToChar(char str1[]) {
   char *p = malloc(sizeof *p);
@@ -107,6 +69,7 @@ char* IntToString(int a) {
   return p;
 }
 
+
 char* fourBitToHex(int array[], int count) {
    /* grab 4 bits: */
    int i,j;
@@ -144,3 +107,7 @@ char* fourBitToHex(int array[], int count) {
       return r;
 }
 
+int main()
+{
+   return 0;
+}

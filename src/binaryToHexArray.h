@@ -3,7 +3,7 @@ struct structArray  {
 };
 
 struct concatenatedString {
-   char example[2];
+   char example[3];
 };
 
 typedef struct concatenatedString Struct;
