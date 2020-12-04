@@ -4,6 +4,12 @@
 #include "binaryToHexArray.h"
 
 /* this is set up in that it only take an int array , not a binary string */
+/*
+ * To do this see:
+ *
+ * /home/ubuntu/Downloads/changearray/scratchwork/fourBitToHex/dataTypeFive.c
+ * /home/ubuntu/Downloads/changearray/scratchwork/fourBitToHex/dataTypeSix.c
+*/
 
 Hexarray BinToHexArray(int array[],int length) {
    char *p, *g;
