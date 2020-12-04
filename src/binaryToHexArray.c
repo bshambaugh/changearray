@@ -3,6 +3,8 @@
 #include <string.h>
 #include "binaryToHexArray.h"
 
+/* this is set up in that it only take an int array , not a binary string */
+
 Hexarray BinToHexArray(int array[],int length) {
    char *p, *g;
    Hexarray HexArray = {{{'\0','\0'}}};
