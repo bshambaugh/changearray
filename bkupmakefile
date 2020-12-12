@@ -47,7 +47,7 @@ TARGET_BASE1=test1
 TARGET_BASE2=test2
 TARGET1 = $(TARGET_BASE1)$(TARGET_EXTENSION)
 TARGET2 = $(TARGET_BASE2)$(TARGET_EXTENSION)
-SRC_FILES1=$(UNITY_ROOT)/test/unity/src/unity.c src/floatToIEEE754BinarywUnio4.c  test/TestfloatToIEEE754BinarywUnio4.c  test/test_runners/TestfloatToIEEE754BinarywUnio4_Runner.c
+SRC_FILES1=$(UNITY_ROOT)/test/unity/src/unity.c src/ProductionCode.c  test/TestProductionCode.c  test/test_runners/TestProductionCode_Runner.c
 SRC_FILES2=$(UNITY_ROOT)/test/unity/src/unity.c src/binaryToHexArray.c test/TestbinaryToHexArray.c test/test_runners/TestbinaryToHexArray_Runner.c
 INC_DIRS=-Isrc -I$(UNITY_ROOT)/test/unity/src
 SYMBOLS=
@@ -60,8 +60,8 @@ default: $(SRC_FILES1) $(SRC_FILES2)
 	- ./$(TARGET1)
 	- ./$(TARGET2)
 
-test/test_runners/TestfloatToIEEE754BinarywUnio4_Runner.c: test/TestfloatToIEEE754BinarywUnio4.c
-	ruby $(UNITY_ROOT)/auto/generate_test_runner.rb test/TestfloatToIEEE754BinarywUnio4.c  test/test_runners/TestfloatToIEEE754BinarywUnio4_Runner.c
+test/test_runners/TestProductionCode_Runner.c: test/TestProductionCode.c
+	ruby $(UNITY_ROOT)/auto/generate_test_runner.rb test/TestProductionCode.c  test/test_runners/TestProductionCode_Runner.c
 test/test_runners/TestbinaryToHexArray_Runner.c: test/TestbinaryToHexArray.c
 	ruby $(UNITY_ROOT)/auto/generate_test_runner.rb test/TestbinaryToHexArray.c test/test_runners/TestbinaryToHexArray_Runner.c
 
