@@ -1,0 +1,100 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "binaryToHexArray.h"
+#include "floatToIEEE754Binary.h"
+
+struct uint832message {
+   u_int8_t array[32];
+};
+
+typedef struct uint832message HexArrayINT;
+
+Hexarray floatToHex32(float q)
+{
+    int i;
+    int length = 32;
+    Struct32Int p;
+    Hexarray resultThree;
+    p = floatToIEEE754Int(q);
+    int arrayTwo[32];
+    for (i=0; i < 32; i++)
+    {
+        arrayTwo[i] = p.d[i];
+    }
+    resultThree = BinToHexArray(arrayTwo,length);
+
+    return resultThree;
+}
+
+void  TypeCastHexArayToInt(Hexarray result, u_int8_t messageTwo[]) 
+{
+   int i;
+   for(i = 0; i < 4; i++)
+    {
+         messageTwo[i] = (int)strtol(result.hexArray[i],NULL,16);
+    } 
+}
+
+u_int8_t* fun(u_int8_t *arr)
+{
+        char hexOne[3] = {'1','F','\0'};
+        char hexTwo[3] = {'1','E','\0'};
+        char hexThree[3] = {'1','C','\0'};
+        arr[0] = (u_int8_t)strtol(hexOne,NULL,16);
+        arr[1] = (u_int8_t)strtol(hexTwo,NULL,16);
+        arr[2] = (u_int8_t)strtol(hexThree,NULL,16);
+
+        return arr;
+}
+
+HexArrayINT resultToHexArray(Hexarray result) {
+   HexArrayINT t;
+   int i;
+   for(i = 0; i < 4; i++)
+    {
+         t.array[i] = (u_int8_t)strtol(result.hexArray[i],NULL,16);
+    }
+    for(i = 4; i < 33; i++)
+    {
+         t.array[i] = 0;
+    }
+   return t;
+}
+
+HexArrayINT floatToHexArrayINT(float a)
+{
+  Hexarray resultfour;
+  HexArrayINT p;
+  resultfour = floatToHex32(a);
+  p = resultToHexArray(resultfour);
+  return p;
+}
+
+int main() {
+
+    Hexarray resultfour;
+
+    float m = 129.45;
+
+    resultfour = floatToHex32(m);
+
+    u_int8_t messageTwo[32];
+ 
+    TypeCastHexArayToInt(resultfour,messageTwo);
+    printf("The elements %x, %x, %x, %x \n",messageTwo[0],messageTwo[1],messageTwo[2],messageTwo[3]);
+
+    HexArrayINT p;
+
+    p = resultToHexArray(resultfour);
+
+    printf("The elements from result four %x, %x, %x, %x \n",p.array[0],p.array[1],p.array[2],p.array[3]);
+
+    HexArrayINT q;
+
+    q = floatToHexArrayINT(m);
+
+    printf("The elements from result fivw %x, %x, %x, %x \n",q.array[0],q.array[1],q.array[2],q.array[3]);
+
+    return 0;
+}
