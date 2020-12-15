@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include "floatToHexArray.h"
-#include "binaryToHexArray.h"
-#include "floatToIEEE754Binary.h"
 
 int main() {
 

@@ -1,4 +1,14 @@
-#include "floatToHexArray.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "binaryToHexArray.h"
+#include "floatToIEEE754Binary.h"
+
+struct uint832message {
+   u_int8_t array[32];
+};
+
+typedef struct uint832message HexArrayINT32;
 
 Hexarray floatToHex32(float q)
 {
@@ -40,3 +50,17 @@ HexArrayINT32 floatToHexArrayINT32(float a)
   return p;
 }
 
+int main() {
+
+	/*
+    float m = 129.45; */
+
+    float m = 12989.4658204;
+    HexArrayINT32 q;
+
+    q = floatToHexArrayINT32(m);
+
+    printf("The elements from result fivw %x, %x, %x, %x \n",q.array[0],q.array[1],q.array[2],q.array[3]);
+
+    return 0;
+}

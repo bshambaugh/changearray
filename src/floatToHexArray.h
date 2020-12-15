@@ -1,3 +1,7 @@
+#include "binaryToHexArray.h"
+#include "floatToIEEE754Binary.h"
+#include <stdlib.h>
+
 struct uint832message {
    u_int8_t array[32];
 };

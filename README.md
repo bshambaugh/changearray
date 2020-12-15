@@ -16,7 +16,9 @@ However, this program has some roundoff error(?), so try: https://www.geeksforge
 ## now I am doing something like:
 gcc -g main.c binToHexArray.c -o main
 
-and hopefully: gcc -g main.c binToHexArray.c floatToIEEE754Binary.c -o main
+(erase) and hopefully: gcc -g main.c binToHexArray.c floatToIEEE754Binary.c -o main (erase)
+
+gcc -g floatToIEEE754Binary.c binaryToHexArray.c floatToHexArray.c main.c -o main
 
 ## managing the memory::
 https://valgrind.org/docs/manual/quick-start.html
