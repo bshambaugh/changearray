@@ -1,0 +1,101 @@
+The sign bit is 1
+Array element int 0 is: 1
+Array element int 1 is: 0
+Array element int 2 is: 0
+Array element int 3 is: 0
+Array element int 4 is: 0
+Array element int 5 is: 0
+Array element int 6 is: 1
+Array element int 7 is: 1
+Array element int 8 is: 1
+The exponent to be converted to binary is: 8
+The first part of the mantissa is: 8
+Array element exp int 0 is: 1
+Array element exp int 1 is: 0
+Array element exp int 2 is: 0
+Array element exp int 3 is: 0
+Array element exp int 4 is: 0
+Array element exp int 5 is: 1
+Array element exp int 6 is: 1
+Array element exp int 7 is: 1
+The length of the exponent array is 8
+I need to truncate. 8 is less than 8
+I need to truncate. 8 is less than 8
+Array element frac truncated 0 is: 1
+Array element frac truncated 1 is: 0
+Array element frac truncated 2 is: 0
+Array element frac truncated 3 is: 0
+Array element frac truncated 4 is: 0
+Array element frac truncated 5 is: 1
+Array element frac truncated 6 is: 1
+Array element frac truncated 7 is: 1
+Array element frac 0 is: 0
+Array element frac 1 is: 1
+Array element frac 2 is: 0
+Array element frac 3 is: 0
+Array element frac 4 is: 1
+Array element frac 5 is: 1
+Array element frac 6 is: 0
+Array element frac 7 is: 0
+Array element frac 8 is: 1
+Array element frac 9 is: 1
+Array element frac 10 is: 0
+Array element frac 11 is: 0
+Array element frac 12 is: 1
+Array element frac 13 is: 0
+Array element frac 14 is: 1
+Array element frac 15 is: 0
+Array element frac 16 is: 0
+Array element frac 17 is: 0
+Array element frac 18 is: 0
+Array element frac 19 is: 0
+Array element frac 20 is: 0
+Array element frac 21 is: 0
+Array element frac 22 is: 0
+The second part of the mantissa is: 22
+gg.binArray length is 32 , and truncated length is 32
+9 + 23 = 32
+pp.count + 1 = 8 , zz.count+1 = 32
+8 + 32 = 40
+40 + 1 = 41
+Array combined int 0 is: 1
+Array combined int 1 is: 0
+Array combined int 2 is: 0
+Array combined int 3 is: 0
+Array combined int 4 is: 0
+Array combined int 5 is: 1
+Array combined int 6 is: 1
+Array combined int 7 is: 1
+Array combined int 8 is: 1
+Array combined int 9 is: 0
+Array combined int 10 is: 0
+Array combined int 11 is: 0
+Array combined int 12 is: 0
+Array combined int 13 is: 0
+Array combined int 14 is: 1
+Array combined int 15 is: 1
+Array combined int 16 is: 1
+Array combined int 17 is: 0
+Array combined int 18 is: 1
+Array combined int 19 is: 0
+Array combined int 20 is: 0
+Array combined int 21 is: 1
+Array combined int 22 is: 1
+Array combined int 23 is: 0
+Array combined int 24 is: 0
+Array combined int 25 is: 1
+Array combined int 26 is: 1
+Array combined int 27 is: 0
+Array combined int 28 is: 0
+Array combined int 29 is: 1
+Array combined int 30 is: 0
+Array combined int 31 is: 1
+Array combined int 32 is: 0
+Array combined int 33 is: 0
+Array combined int 34 is: 0
+Array combined int 35 is: 0
+Array combined int 36 is: 0
+Array combined int 37 is: 0
+Array combined int 38 is: 0
+Array combined int 39 is: 0
+Array combined int 40 is: 1
