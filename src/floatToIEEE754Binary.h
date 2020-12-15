@@ -1,7 +1,12 @@
+struct uint832message {
+   u_int8_t array[32];
+};
+
 struct binArray32 {
    char d[32];
 };
 
+typedef struct uint832message HexArrayINT32;
 typedef struct binArray32 Struct32Int;
 
 typedef union {
@@ -25,3 +30,8 @@ typedef union {
 void printBinary(int n, int i,int array[]);
 void printIEEE(myfloat32 var, int l, int m, int k, int a[], int b[], int c[], int d[]);
 Struct32Int floatToIEEE754Int(float q);
+
+Hexarray floatToHex32(float q);
+HexArrayINT32 resultToHexArray(Hexarray result);
+HexArrayINT32 floatToHexArrayINT32(float a);
+

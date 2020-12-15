@@ -180,72 +180,20 @@ char* fourBitToHex(int array[], int count) {
 }
 
 int main() {
-   // Test for IntToString
-   char *k;
-   k = IntToString(5);
-   printf("5 converd to The string is: %c\n",*k);
-   free(k);
-  
-   // Test for IntToChar
-   char *r;
-   r = IntToChar("1011");
-   printf("1011 converted The hex string is: %c\n",*r);
-   free(r);
+  char hexThree1[3] = {'1','F','\0'};
+  int numThree1 = (int)strtol(hexThree1,NULL,16);
 
-   // grab the first 4 bits of an array
-   int array[32] = {0,1,0,0,0,0,1,1,1,0,0,0,0,0,1,1,1,0,1,0,0,1,1,0,0,1,1,0,0,1,0,1};
-   int i = 8;
-   char *p;
-   p = fourBitToHex(array,i);
-   printf("The 2nd 4 bits from the array in hex are: %c\n",*p);
-   free(p);
-  
-   // merge Two Characters into a Struct 
-   Struct result;
-   char *j, *m;
-   j = "A";
-   m = "B";
-   result = merge_Chars(*j,*m);
-    printf("Print the characters; { %c , %c }\n",result.example[0],result.example[1]);
-//   printf("%c and %c merged are: %s\n",*j,*m,result.example);
+  char hexThree2[3] = {'0','5','\0'};
+  int numThree2 = (int)strtol(hexThree2,NULL,16);
 
-//   printf("%c and %c merged are with result: %s\n",*j,*m,merge_Chars(*j,*m).example);
- 
-   char biArray[2][2] = {{'A','\0'},{'B','\0'}};
- 
-   char binArray2[3] = {'A','B','\0'};
-
-  u_int8_t message[32] = {
-  0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F,
-  0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x1A, 0x1B, 0x1C, 0x1D, 0x1E, 0x1F
-  };
-
-  printf("here is the last hex value %d\n",message[15]);
-
-  char hex[] = "0F";
-  int num = (int)strtol(hex,NULL,16);
-  printf("%c\n",num);
-  printf("%d\n",num);
-  printf("%X\n",num);
-
-  char hexTwo[] = "0E";
-  int numTwo = (int)strtol(hexTwo,NULL,16);
-  printf("%c\n",numTwo);
-  printf("%d\n",numTwo);
-  printf("%X\n",numTwo);
-
-  char hexThree[3] = {'1','F','\0'};
-  int numThree = (int)strtol(hexThree,NULL,16);
-  printf("1F c: %c\n",numThree);
-  printf("1F d %d\n",numThree);
-  printf("1F x %X\n",numThree);
-
+  char hexThree3[3] = {'1','E','\0'};
+  int numThree3 = (int)strtol(hexThree3,NULL,16);
 
   u_int8_t messageTwo[3];
 
-  messageTwo[0] = num;
-  messageTwo[1] = numTwo;
-  messageTwo[2] = numThree;
+  messageTwo[0] = numThree1;
+  messageTwo[1] = numThree2;
+  messageTwo[2] = numThree3;
 
   printf("here is the first hex value in messageTwo %d\n",messageTwo[0]);
   printf("here is the last hex value in messageTwo %d\n",messageTwo[1]); 

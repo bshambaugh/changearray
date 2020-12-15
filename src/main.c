@@ -1,96 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "floatToHexArray.h"
 #include "binaryToHexArray.h"
-#include "floatToIEEE754BinarywUnio4.h"
-
-Hexarray floatToHex32(float q)
-{
-    int i;
-    int length = 32;
-    Struct32Int p;
-    Hexarray resultThree;
-    p = floatToIEEE754Int(q);
-    int arrayTwo[32];
-    for (i=0; i < 32; i++)
-    {
-        arrayTwo[i] = p.d[i];
-    }
-    resultThree = BinToHexArray(arrayTwo,length);
-
-    return resultThree;
-}
+#include "floatToIEEE754Binary.h"
 
 int main() {
 
-    /* the length of array and the value of length should be the same, it should always be a multiple of 8
-     the first number in hexArray should be length / divisor */
+    float m = 12989.4658204;
+    HexArrayINT32 q;
 
-    int length = 32;
-    int array[32] = {0,1,0,0,0,0,1,1,1,0,0,0,0,0,1,1,1,0,1,0,0,1,1,0,0,1,1,0,0,1,0,1}; 
+    q = floatToHexArrayINT32(m);
 
-    Hexarray resultTwo;
-    resultTwo = BinToHexArray(array,length);
-    printf("Here is the example string from hexArray[0]: %s\n",resultTwo.hexArray[0]);
-    /* Here is the example string from hexArray[0]: 43  */
-    printf("Here is the example string from hexArray[1]: %s\n",resultTwo.hexArray[1]);
-    /* Here is the example string from hexArray[1]: 83 */
-    printf("Here is the example string from hexArray[2]: %s\n",resultTwo.hexArray[2]);
-    /* Here is the example string from hexArray[2]: A6 */
-    printf("Here is the example string from hexArray[3]: %s\n",resultTwo.hexArray[3]);
-    /* Here is the example string from hexArray[3]: 65 */
+    printf("The elements from result fivw %x, %x, %x, %x \n",q.array[0],q.array[1],q.array[2],q.array[3]);
 
-    /* match all the elements of the hex array for the given input... */
-
-    
-    int i;
-    /* this is the input to the function */
-    float q = -2.75;
-    Struct32Int p;
-    p = floatToIEEE754Int(q);       
-    for(i = 0; i < 32; i++) {
-         printf("%d",p.d[i]);
-    }
-
-        printf("\n");
-
-    Hexarray resultThree;
-    int arrayTwo[32];
-    for (i=0; i < 32; i++)
-    {
-        arrayTwo[i] = p.d[i];
-    }
-    /* resultThree is the output of the function */
-    resultThree = BinToHexArray(arrayTwo,length); 
-    /* resultThree = BinToHexArray(p.d,length); */
-    printf("Here is the example string from hexArray[0]: %s\n",resultThree.hexArray[0]);
-    /* Here is the example string from hexArray[0]: 43  */
-    printf("Here is the example string from hexArray[1]: %s\n",resultThree.hexArray[1]);
-    /* Here is the example string from hexArray[1]: 83 */
-    printf("Here is the example string from hexArray[2]: %s\n",resultThree.hexArray[2]);
-    /* Here is the example string from hexArray[2]: A6 */
-    printf("Here is the example string from hexArray[3]: %s\n",resultThree.hexArray[3]);
-    /* Here is the example string from hexArray[3]: 65 */
-
-
-
-    /* here is everything wrapped into a function */
-
-    Hexarray resultfour;
-
-    float m = 129.45;
-
-    resultfour = floatToHex32(m);
-
-    printf("Here is the example string from hexArray[0]: %s\n",resultfour.hexArray[0]);
-    /* Here is the example string from hexArray[0]: 43  */
-    printf("Here is the example string from hexArray[1]: %s\n",resultfour.hexArray[1]);
-    /* Here is the example string from hexArray[1]: 83 */
-    printf("Here is the example string from hexArray[2]: %s\n",resultfour.hexArray[2]);
-    /* Here is the example string from hexArray[2]: A6 */
-    printf("Here is the example string from hexArray[3]: %s\n",resultfour.hexArray[3]);
-    /* Here is the example string from hexArray[3]: 65 */
-
-   
     return 0;
 }

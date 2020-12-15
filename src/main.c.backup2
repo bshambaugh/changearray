@@ -1,0 +1,77 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "binaryToHexArray.h"
+#include "floatToIEEE754Binary.h"
+
+Hexarray floatToHex32(float q)
+{
+    int i;
+    int length = 32;
+    Struct32Int p;
+    Hexarray resultThree;
+    p = floatToIEEE754Int(q);
+    int arrayTwo[32];
+    for (i=0; i < 32; i++)
+    {
+        arrayTwo[i] = p.d[i];
+    }
+    resultThree = BinToHexArray(arrayTwo,length);
+
+    return resultThree;
+}
+
+int main() {
+
+    /* here is everything wrapped into a function */
+
+    Hexarray resultfour;
+
+    float m = 129.45;
+
+    resultfour = floatToHex32(m);
+
+    u_int8_t messageTwo[32];
+
+    /*
+    printf("Here is the example string from hexArray[0]: %s\n",resultfour.hexArray[0]);
+    int numZero = (int)strtol(resultfour.hexArray[0],NULL,16);
+    printf("Here is it in int, %X\n",numZero);
+    messageTwo[0] = numZero;
+    */
+
+    /* Here is the example string from hexArray[0]: 43  */
+    /*
+    printf("Here is the example string from hexArray[1]: %s\n",resultfour.hexArray[1]);
+    int numTwo = (int)strtol(resultfour.hexArray[1],NULL,16);
+    printf("Here is it in int, %X\n",numTwo);
+    messageTwo[1] = numTwo;
+    */
+
+    /* Here is the example string from hexArray[1]: 83 */
+    /*
+    printf("Here is the example string from hexArray[2]: %s\n",resultfour.hexArray[2]);
+    int numThree = (int)strtol(resultfour.hexArray[2],NULL,16);
+    printf("Here is it in int, %X\n",numThree);
+    messageTwo[2] = numThree;
+    */
+
+    /* Here is the example string from hexArray[2]: A6 */
+    /*
+    printf("Here is the example string from hexArray[3]: %s\n",resultfour.hexArray[3]);
+    int numFour = (int)strtol(resultfour.hexArray[3],NULL,16);
+    printf("Here is it in int, %X\n",numFour);
+    messageTwo[3] = numFour;
+    */
+
+    int i;
+
+    for(i = 0; i < 3; i++)
+    {
+         messageTwo[i] = (int)strtol(resultfour.hexArray[0],NULL,16);
+    }
+
+    printf("The elements %x, %x, %x, %x \n",messageTwo[0],messageTwo[1],messageTwo[2],messageTwo[3]);
+
+    return 0;
+}

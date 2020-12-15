@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "binaryToHexArray.h"
+#include "floatToIEEE754Binary.h"
+
+Hexarray floatToHex32(float q)
+{
+    int i;
+    int length = 32;
+    Struct32Int p;
+    Hexarray resultThree;
+    p = floatToIEEE754Int(q);
+    int arrayTwo[32];
+    for (i=0; i < 32; i++)
+    {
+        arrayTwo[i] = p.d[i];
+    }
+    resultThree = BinToHexArray(arrayTwo,length);
+
+    return resultThree;
+}
+
+/*
+void TypeCastHexArayToInt(Hexarray result, u_int8_t messageTwo[]) 
+{
+   int i;
+   for(i = 0; i < 4; i++)
+    {
+         messageTwo[i] = (int)strtol(result.hexArray[0],NULL,16);
+         printf("messageTwo[i] %d\n",messageTwo[i]);
+    } 
+}
+*/
+
+int main() {
+
+    /* here is everything wrapped into a function */
+
+    Hexarray resultfour;
+
+    float m = 123.35;
+
+    resultfour = floatToHex32(m);
+
+    u_int8_t messageTwo[32]; 
+
+   /*  TypeCastHexArayToInt(resultfour,messageTwo); */
+
+    int i;
+
+    for(i = 0; i < 4; i++)
+    {
+         messageTwo[i] = (int)strtol(resultfour.hexArray[0],NULL,16);
+    }
+
+/*    TypeCastHexArayToInt(resultfour,messageTwo); */
+
+    printf("The elements %x, %x, %x, %x \n",messageTwo[0],messageTwo[1],messageTwo[2],messageTwo[3]);
+
+    return 0;
+}
