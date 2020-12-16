@@ -22,7 +22,7 @@ HexArrayINT32 resultToHexArray(Hexarray result) {
    int i;
    for(i = 0; i < 4; i++)
     {
-         t.array[i] = (u_int8_t)strtol(result.hexArray[i],NULL,16);
+         t.array[i] = (uint8_t)strtol(result.hexArray[i],NULL,16);
     }
     for(i = 4; i < 33; i++)
     {

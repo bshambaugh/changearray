@@ -45,28 +45,36 @@ CFLAGS += -Wold-style-definition
 
 TARGET_BASE1=test1
 TARGET_BASE2=test2
+TARGET_BASE3=test3
 TARGET1 = $(TARGET_BASE1)$(TARGET_EXTENSION)
 TARGET2 = $(TARGET_BASE2)$(TARGET_EXTENSION)
+TARGET3 = $(TARGET_BASE3)$(TARGET_EXTENSION)
 SRC_FILES1=$(UNITY_ROOT)/test/unity/src/unity.c src/floatToIEEE754Binary.c  test/TestfloatToIEEE754Binary.c  test/test_runners/TestfloatToIEEE754Binary_Runner.c
 SRC_FILES2=$(UNITY_ROOT)/test/unity/src/unity.c src/binaryToHexArray.c test/TestbinaryToHexArray.c test/test_runners/TestbinaryToHexArray_Runner.c
+SRC_FILES3=$(UNITY_ROOT)/test/unity/src/unity.c src/floatToHexArray.c test/TestfloatToHexArray.c test/test_runners/TestfloatToHexArray_Runner.c
 INC_DIRS=-Isrc -I$(UNITY_ROOT)/test/unity/src
 SYMBOLS=
 
 all: clean default
 
-default: $(SRC_FILES1) $(SRC_FILES2)
+default: $(SRC_FILES1) $(SRC_FILES2) $(SRC_FILES3)
 	$(C_COMPILER) $(CFLAGS) $(INC_DIRS) $(SYMBOLS) $(SRC_FILES1) -o $(TARGET1)
 	$(C_COMPILER) $(CFLAGS) $(INC_DIRS) $(SYMBOLS) $(SRC_FILES2) -o $(TARGET2)
+	$(C_COMPILER) $(CFLAGS) $(INC_DIRS) $(SYMBOLS) $(SRC_FILES3) -o $(TARGET3)
 	- ./$(TARGET1)
 	- ./$(TARGET2)
+	- ./$(TARGET3)
 
 test/test_runners/TestfloatToIEEE754Binary_Runner.c: test/TestfloatToIEEE754Binary.c
 	ruby $(UNITY_ROOT)/auto/generate_test_runner.rb test/TestfloatToIEEE754Binary.c  test/test_runners/TestfloatToIEEE754Binary_Runner.c
 test/test_runners/TestbinaryToHexArray_Runner.c: test/TestbinaryToHexArray.c
 	ruby $(UNITY_ROOT)/auto/generate_test_runner.rb test/TestbinaryToHexArray.c test/test_runners/TestbinaryToHexArray_Runner.c
+test/test_runners/TestfloatToHexArray_Runner.c: test/TestfloatToHexArray.c
+	ruby $(UNITY_ROOT)/auto/generate_test_runner.rb test/TestfloatToHexArray.c  test/test_runners/TestfloatToHexArray_Runner.c
+
 
 clean:
-	$(CLEANUP) $(TARGET1) $(TARGET2)
+	$(CLEANUP) $(TARGET1) $(TARGET2) $(TARGET3)
 
 ci: CFLAGS += -Werror
 ci: default

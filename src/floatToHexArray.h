@@ -1,9 +1,11 @@
 #include "binaryToHexArray.h"
 #include "floatToIEEE754Binary.h"
+#include <stdint.h>
+#include <string.h>
 #include <stdlib.h>
 
 struct uint832message {
-   u_int8_t array[32];
+   uint8_t array[32];
 };
 
 typedef struct uint832message HexArrayINT32;

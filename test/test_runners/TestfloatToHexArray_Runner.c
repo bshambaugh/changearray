@@ -2,13 +2,15 @@
 
 /*=======Automagically Detected Files To Include=====*/
 #include "unity.h"
-#include "floatToIEEE754BinarywUnio4.h"
+#include "floatToHexArray.h"
 #include <stdlib.h>
 
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
-extern void testfloatToIEEE754Int(void);
+extern void test_floatToHex32(void);
+extern void test_resultToHexArray(void);
+extern void test_floatToHexArrayINT32(void);
 
 
 /*=======Mock Management=====*/
@@ -69,8 +71,10 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 /*=======MAIN=====*/
 int main(void)
 {
-  UnityBegin("test/TestfloatToIEEE754BinarywUnio4.c");
-  run_test(testfloatToIEEE754Int, "testfloatToIEEE754Int", 13);
+  UnityBegin("test/TestfloatToHexArray.c");
+  run_test(test_floatToHex32, "test_floatToHex32", 13);
+  run_test(test_resultToHexArray, "test_resultToHexArray", 17);
+  run_test(test_floatToHexArrayINT32, "test_floatToHexArrayINT32", 21);
 
   return UnityEnd();
 }
