@@ -75,10 +75,10 @@ int main(void)
 {
   UnityBegin("test/TestbinaryToHexArray.c");
   run_test(test_IntToString, "test_IntToString", 13);
-  run_test(test_IntToChar, "test_IntToChar", 19);
-  run_test(test_merge_Chars, "test_merge_Chars", 25);
-  run_test(test_fourBitToHex, "test_fourBitToHex", 37);
-  run_test(test_BinToHexArray, "test_BinToHexArray", 82);
+  run_test(test_IntToChar, "test_IntToChar", 22);
+  run_test(test_merge_Chars, "test_merge_Chars", 31);
+  run_test(test_fourBitToHex, "test_fourBitToHex", 43);
+  run_test(test_BinToHexArray, "test_BinToHexArray", 88);
 
   return UnityEnd();
 }

@@ -13,13 +13,19 @@ void tearDown(void)
 void test_IntToString(void)
 {
   int a = 5;
-  TEST_ASSERT_EQUAL_STRING("5", IntToString(a));
+  char *b;
+  b = IntToString(a);
+  TEST_ASSERT_EQUAL_STRING("5", b);
+  free(b);
 }
 
 void test_IntToChar(void)
 {
   char b[] = "1011";
-  TEST_ASSERT_EQUAL_STRING("B", IntToChar(b));
+  char *d;
+  d = IntToChar(b);
+  TEST_ASSERT_EQUAL_STRING("B", d);
+  free(d);
 }
 
 void test_merge_Chars(void)
