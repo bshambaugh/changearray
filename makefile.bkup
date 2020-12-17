@@ -18,7 +18,6 @@ else
 	CLEANUP = rm -f
 	MKDIR = mkdir -p
 	TARGET_EXTENSION=.out
-	TARGET_OBJ_EXTENSION=.o
 endif
 
 C_COMPILER=gcc
@@ -48,29 +47,20 @@ TARGET_BASE1=test1
 TARGET_BASE2=test2
 TARGET_BASE3=test3
 TARGET1 = $(TARGET_BASE1)$(TARGET_EXTENSION)
-TARGET1P = $(TARGET_BASE1)$(TARGET_OBJ_EXTENSION)
 TARGET2 = $(TARGET_BASE2)$(TARGET_EXTENSION)
-TARGET2P = $(TARGET_BASE2)$(TARGET_OBJ_EXTENSION)
 TARGET3 = $(TARGET_BASE3)$(TARGET_EXTENSION)
-TARGET3P = $(TARGET_BASE3)$(TARGET_OBJ_EXTENSION)
-SRC_FILES1=$(UNITY_ROOT)/test/unity/src/unity.c test/TestfloatToIEEE754Binary.c  test/test_runners/TestfloatToIEEE754Binary_Runner.c
-SRC_FILES1P=src/floatToIEEE754Binary.c
-SRC_FILES2=$(UNITY_ROOT)/test/unity/src/unity.c test/TestbinaryToHexArray.c test/test_runners/TestbinaryToHexArray_Runner.c
-SRC_FILES2P=src/binaryToHexArray.c
-SRC_FILES3=$(UNITY_ROOT)/test/unity/src/unity.c test/TestfloatToHexArray.c test/test_runners/TestfloatToHexArray_Runner.c
-SRC_FILES3P=src/floatToHexArray.c
+SRC_FILES1=$(UNITY_ROOT)/test/unity/src/unity.c src/floatToIEEE754Binary.c  test/TestfloatToIEEE754Binary.c  test/test_runners/TestfloatToIEEE754Binary_Runner.c
+SRC_FILES2=$(UNITY_ROOT)/test/unity/src/unity.c src/binaryToHexArray.c test/TestbinaryToHexArray.c test/test_runners/TestbinaryToHexArray_Runner.c
+SRC_FILES3=$(UNITY_ROOT)/test/unity/src/unity.c src/floatToHexArray.c test/TestfloatToHexArray.c test/test_runners/TestfloatToHexArray_Runner.c
 INC_DIRS=-Isrc -I$(UNITY_ROOT)/test/unity/src
 SYMBOLS=
 
 all: clean default
 
-default: $(SRC_FILES1) $(SRC_FILES2) $(SRC_FILES1P) $(SRC_FILES2P) $(SRC_FILES3P)
-	$(C_COMPILER) $(CFLAGS) $(SYMBOLS) -c  $(SRC_FILES1P) -o $(TARGET1P)
-	$(C_COMPILER) $(CFLAGS) $(SYMBOLS) -c  $(SRC_FILES2P) -o $(TARGET2P)
-	$(C_COMPILER) $(CFLAGS) $(SYMBOLS) -c  $(SRC_FILES3P) -o $(TARGET3P) 
-	$(C_COMPILER) $(CFLAGS) $(INC_DIRS) $(SYMBOLS) $(TARGET1P) $(SRC_FILES1) -o $(TARGET1)
-	$(C_COMPILER) $(CFLAGS) $(INC_DIRS) $(SYMBOLS) $(TARGET2P) $(SRC_FILES2) -o $(TARGET2)
-	$(C_COMPILER) $(CFLAGS) $(INC_DIRS) $(SYMBOLS) $(TARGET1P) $(TARGET2P) $(TARGET3P) $(SRC_FILES3) -o $(TARGET3)
+default: $(SRC_FILES1) $(SRC_FILES2) $(SRC_FILES3)
+	$(C_COMPILER) $(CFLAGS) $(INC_DIRS) $(SYMBOLS) $(SRC_FILES1) -o $(TARGET1)
+	$(C_COMPILER) $(CFLAGS) $(INC_DIRS) $(SYMBOLS) $(SRC_FILES2) -o $(TARGET2)
+	$(C_COMPILER) $(CFLAGS) $(INC_DIRS) $(SYMBOLS) $(SRC_FILES3) -o $(TARGET3)
 	- ./$(TARGET1)
 	- ./$(TARGET2)
 	- ./$(TARGET3)
@@ -84,7 +74,7 @@ test/test_runners/TestfloatToHexArray_Runner.c: test/TestfloatToHexArray.c
 
 
 clean:
-	$(CLEANUP) $(TARGET1) $(TARGET2) $(TARGET3) $(TARGET1P) $(TARGET2P) $(TARGET3P)
+	$(CLEANUP) $(TARGET1) $(TARGET2) $(TARGET3)
 
 ci: CFLAGS += -Werror
 ci: default
