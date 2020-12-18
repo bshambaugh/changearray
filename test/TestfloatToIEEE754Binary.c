@@ -20,7 +20,7 @@ void testfloatToIEEE754Int(void)
     p = floatToIEEE754Int(q);
     for (i=0; i < 32; i++)
     {
-        arrayTwo[i] = p.d[i];
+        arrayTwo[i] = p.e[i];
     }
     TEST_ASSERT_EQUAL_INT_ARRAY(array,arrayTwo,1);
 }

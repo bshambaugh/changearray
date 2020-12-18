@@ -48,7 +48,7 @@ Struct merge_Chars(char A, char B) {
 }
 
 char* IntToChar(char str1[]) {
-  char *p = malloc(sizeof *p);
+  char *p = (char *)malloc(sizeof *p);
 
   if (strcmp(str1,"0000") == 0)  {
       *p = 48;
@@ -88,7 +88,7 @@ char* IntToChar(char str1[]) {
 }
 
 char* IntToString(int a) {
-  char  *p = malloc(sizeof *p);
+  char  *p = (char *)malloc(sizeof *p);
 
   if (a == 0)  {
       *p = 48;

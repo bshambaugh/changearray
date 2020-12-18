@@ -12,3 +12,5 @@ done
 cp *.h ../ardunio/
 cd ..
 rm ardunio/main.cpp
+cp src/library_properties/library.properties ardunio/
+zip -r floatToUint8HexStringArdunio.zip ardunio/

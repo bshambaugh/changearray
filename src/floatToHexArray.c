@@ -10,7 +10,7 @@ Hexarray floatToHex32(float q)
     int arrayTwo[32];
     for (i=0; i < 32; i++)
     {
-        arrayTwo[i] = p.d[i];
+        arrayTwo[i] = p.e[i];
     }
     resultThree = BinToHexArray(arrayTwo,length);
 
@@ -39,4 +39,3 @@ HexArrayINT32 floatToHexArrayINT32(float a)
   p = resultToHexArray(resultfour);
   return p;
 }
-
