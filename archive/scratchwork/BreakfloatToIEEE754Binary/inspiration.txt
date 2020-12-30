@@ -1,0 +1,8 @@
+Decimal to IEEE 754 Floating Point Representation - 
+Abishalini Sivaraman
+https://www.youtube.com/watch?reload=9&v=8afbTaA-gOQ
+
+not used, but interesting:
+IEEE 754 Floating Point Representation to its Decimal Equivalent - 
+Abishalini Sivaraman
+https://www.youtube.com/watch?v=LXF-wcoeT0o
